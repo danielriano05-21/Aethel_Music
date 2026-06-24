@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Aethel Music</title>
+        <link href="views/static/css/cover.css" rel="stylesheet">
+    </head>
+<body>
+    <div class="contenedor">
+        <div class="arriba caja"></div>
+        <div class="medio">
+            <div class="izquierda caja">
+                <img src="views/img/Logotri.png" height="300" width="300">
+            </div>
+            <div class="derecha">
+                <div class="caja">
+                    <img src="views/img/Logotext.png" height="150" width="300">
+                </div>
+                <div class="caja">
+                    <input type="file" id="archivo" hidden>
+                        <a href="#" class="boton-archivo"
+                        onclick="document.getElementById('archivo').click(); return false;">
+                        <span class="icono">📁</span>  
+                            Abrir archivos
+                        </a>
+                </div>
+            </div>
+        </div>
+        <div class="abajo caja">
+            <div>
+                <img src="views/img/config.png" alt="config" width="50" height="50">
+            </div>
+            <div>
+                <img src="views/img/consol.png" alt="consol" width="50" height="50">
+            </div>
+            <div>
+                <img src="views/img/home.png" alt="home" width="50" height="50">
+            </div>
+            <div>
+                <img src="views/img/carp.png" alt="carp" width="50" height="50">
+            </div>
+            <div>
+                <img src="views/img/share.png" alt="share" width="50" height="50">
+            </div>        
+        </div>
+    </div>
+    
+    <script src="views/static/js/cover.js"></script>
+
+</body>
+</html>
