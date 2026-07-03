@@ -1,0 +1,32 @@
+.boton_inicio {
+    width: 50px;
+    height: 50px;
+    background: #d3d3d3;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.boton_inicio img {
+    width: 35px;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.boton_inicio:hover {
+    background: linear-gradient(135deg, #73c0ff, #d077f7);
+    transform: scale(1.00);
+}
+
+.boton_inicio:hover img {
+    filter: invert(100%);
+    transform: scale(1.15);
+}
