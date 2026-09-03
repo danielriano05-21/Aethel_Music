@@ -1,0 +1,470 @@
+@import url(
+    'https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Roboto+Condensed:wght@300;400;500;700&display=swap'
+);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #202124;
+    font-family: "Roboto Condensed", sans-serif;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   ESTRUCTURA GENERAL
+   ========================================= */
+
+.app-layout {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+
+.app-layout > .navbar {
+    width: 100%;
+    height: 80px;
+
+    min-height: 80px;
+    flex-shrink: 0;
+
+    position: relative;
+    z-index: 1000;
+}
+
+
+/* =========================================
+   CONTENIDO DE LAS INTERFACES
+   ========================================= */
+
+.page-content {
+    width: 100%;
+
+    height: calc(100vh - 80px);
+    min-height: 0;
+
+    flex: 1;
+
+    position: relative;
+    z-index: 1;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   MENU INICIAL
+   ========================================= */
+
+.inicio {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(205, 147, 252, 0.07),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(124, 153, 248, 0.07),
+            transparent 32%
+        ),
+        #202124;
+}
+
+
+.contenedor {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+
+    align-items: center;
+
+    padding: 60px 10%;
+    gap: 40px;
+}
+
+
+/* =========================================
+   LOGO TRIANGULAR
+   ========================================= */
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+
+    background: transparent;
+    border: none;
+}
+
+.logo-tri {
+    width: min(70%, 360px);
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 22px rgba(205, 147, 252, 0.12)
+        );
+
+    transition:
+        filter 0.4s ease;
+}
+
+.logo-area:hover .logo-tri {
+    filter:
+        drop-shadow(
+            0 0 35px rgba(205, 147, 252, 0.25)
+        );
+}
+
+
+/* =========================================
+   PARTE DERECHA
+   ========================================= */
+
+.contenido-inicio {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    height: 100%;
+
+    background: transparent;
+    border: none;
+}
+
+
+.logo-text-area {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    background: transparent;
+    border: none;
+}
+
+
+.logo-text {
+    width: min(90%, 500px);
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 18px rgba(124, 153, 248, 0.10)
+        );
+
+    transition:
+        filter 0.4s ease;
+}
+
+.logo-text:hover {
+    filter:
+        drop-shadow(
+            0 0 30px rgba(205, 147, 252, 0.20)
+        );
+}
+
+
+/* =========================================
+   BOTON ABRIR ARCHIVOS
+   ========================================= */
+
+.archivo-area {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    background: transparent;
+    border: none;
+}
+
+
+.boton-archivo {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    min-width: 280px;
+
+    padding: 14px 24px;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    text-decoration: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #cd93fc,
+            #7c99f8
+        );
+
+    border: 1px solid rgba(
+        255,
+        255,
+        255,
+        0.12
+    );
+
+    box-shadow:
+        0 8px 25px rgba(
+            124,
+            153,
+            248,
+            0.20
+        );
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        filter 0.35s ease;
+}
+
+
+.brillo-boton {
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.35),
+            transparent
+        );
+
+    transform: skewX(-25deg);
+
+    transition:
+        left 0.65s ease;
+
+    pointer-events: none;
+}
+
+
+.boton-archivo:hover .brillo-boton {
+    left: 130%;
+}
+
+
+.boton-archivo:hover {
+    transform:
+        translateY(-5px)
+        scale(1.025);
+
+    box-shadow:
+        0 15px 40px rgba(
+            124,
+            153,
+            248,
+            0.35
+        );
+
+    filter: brightness(1.08);
+}
+
+
+.boton-archivo:active {
+    transform:
+        translateY(-1px)
+        scale(0.98);
+}
+
+
+/* =========================================
+   ICONO
+   ========================================= */
+
+.icono-archivo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease;
+}
+
+
+.icono-archivo img {
+    width: 27px;
+    height: 27px;
+
+    object-fit: contain;
+
+    filter:
+        brightness(0)
+        invert(1);
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.boton-archivo:hover .icono-archivo {
+    transform:
+        rotate(-5deg)
+        scale(1.1);
+
+    background:
+        rgba(255, 255, 255, 0.23);
+}
+
+
+.boton-archivo:hover .icono-archivo img {
+    transform:
+        scale(1.12)
+        rotate(3deg);
+}
+
+
+/* =========================================
+   TEXTO
+   ========================================= */
+
+.texto-archivo {
+    position: relative;
+    z-index: 2;
+
+    font-family:
+        "Oswald",
+        sans-serif;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    color: white;
+
+    transition:
+        letter-spacing 0.35s ease;
+}
+
+
+.boton-archivo:hover .texto-archivo {
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .app-layout > .navbar {
+        height: 70px;
+        min-height: 70px;
+    }
+
+    .page-content {
+        height: calc(100vh - 70px);
+    }
+
+    .contenedor {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        padding: 35px;
+        gap: 10px;
+    }
+
+    .logo-tri {
+        width: min(45%, 240px);
+    }
+
+    .logo-text {
+        width: min(70%, 400px);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .contenedor {
+        padding: 20px;
+    }
+
+    .logo-tri {
+        width: 180px;
+    }
+
+    .logo-text {
+        width: 280px;
+    }
+
+    .boton-archivo {
+        min-width: 240px;
+        padding: 12px 18px;
+    }
+}

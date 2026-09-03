@@ -1,0 +1,4 @@
+.env
+.package.json
+.vite.config.json
+.package-lock.json
